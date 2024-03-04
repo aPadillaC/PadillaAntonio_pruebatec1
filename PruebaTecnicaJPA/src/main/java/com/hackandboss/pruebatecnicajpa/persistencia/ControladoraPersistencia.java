@@ -8,18 +8,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControladoraPersistencia {
-    
+
     EmpleadoJpaController empleadoJPA = new EmpleadoJpaController();
 
-    
+
     public void crearEmpleado(Empleado empleado) {
-        
+
         empleadoJPA.create(empleado);
     }
 
-    
+
     public void eliminarEmpleado(int id) {
-        
+
         try {
             empleadoJPA.destroy(id);
         } catch (NonexistentEntityException ex) {
@@ -29,17 +29,17 @@ public class ControladoraPersistencia {
     }
 
     public List<Empleado> listadoEmpleados() {
-        
+
         return empleadoJPA.findEmpleadoEntities();
     }
 
     public Empleado mostrarEmpleado(int id) {
-        
+
         return empleadoJPA.findEmpleado(id);
     }
 
     public void editarEmpleado(Empleado empleadoBuscado) {
-        
+
         try {
             empleadoJPA.edit(empleadoBuscado);
         } catch (Exception ex) {
@@ -49,7 +49,7 @@ public class ControladoraPersistencia {
     }
 
     public List<Empleado> listadoEmpleadosActivos() {
-        
+
         return empleadoJPA.findEmpleadosActivos();
     }
 

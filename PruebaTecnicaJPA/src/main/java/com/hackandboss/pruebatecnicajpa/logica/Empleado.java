@@ -3,7 +3,6 @@ package com.hackandboss.pruebatecnicajpa.logica;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,7 @@ public class Empleado implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEmpleado;
-    private String name;
+    private String nombre;
     private String apellido;
     private String cargo;
     private double salario;
@@ -29,8 +28,8 @@ public class Empleado implements Serializable {
     }
 
     // Constructor con atribujos
-    public Empleado(String name, String apellido, String cargo, double salario, LocalDate fechaInicio) {
-        this.name = name;
+    public Empleado(String nombre, String apellido, String cargo, double salario, LocalDate fechaInicio) {
+        this.nombre = nombre;
         this.apellido = apellido;
         this.cargo = cargo;
         this.salario = salario;
@@ -47,12 +46,12 @@ public class Empleado implements Serializable {
         this.idEmpleado = idEmpleado;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -102,9 +101,7 @@ public class Empleado implements Serializable {
 
     @Override
     public String toString() {
-
-
-        return "Empleado{" + "idEmpleado=" + idEmpleado + ", name=" + name + ", apellido=" + apellido + ", cargo=" + cargo + ", salario=" + salario + ", fechaInicio=" + fechaInicio + ", activo=" + activo + '}';
+        return "Empleado{" + "idEmpleado=" + idEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", cargo=" + cargo + ", salario=" + salario + ", fechaInicio=" + fechaInicio + ", activo=" + activo + '}';
     }
     
 

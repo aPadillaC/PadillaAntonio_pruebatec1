@@ -5,21 +5,21 @@ public class InterfazVisual {
     public void renderizadoGeneralMenu() {
 
         System.out.println("╔═════════════════════════════════════════════════╗");
-        System.out.println("║                   MENÚ PRINCIPAL                ║");
+        System.out.println("║                  MENÚ PRINCIPAL                 ║");
         System.out.println("╠═════════════════════════════════════════════════╣");
         System.out.println("║                                                 ║");
         System.out.println("║  1. Insertar nuevo empleado                     ║");
         System.out.println("║  2. Listado de empleados                        ║");
         System.out.println("║  3. Actualizar datos de empleado                ║");
         System.out.println("║  4. Eliminar empleado                           ║");
-        System.out.println("║  5. Búsqueda empleados por cargo                ║");
+        System.out.println("║  5. Búsqueda empleados personalizada            ║");
         System.out.println("║  6. Salir                                       ║");
         System.out.println("║                                                 ║");
         System.out.println("╚═════════════════════════════════════════════════╝");
 
     }
 
-    public String opcionElegidaString(int opcionElegida) {
+    public void opcionElegidaString(int opcionElegida) {
 
         String titulo = "";
 
@@ -42,7 +42,7 @@ public class InterfazVisual {
                 break;
 
             case 5:
-                titulo = "Búsqueda por cargo";
+                titulo = "Búsqueda personalizada";
                 break;
 
             case 6:
@@ -53,7 +53,10 @@ public class InterfazVisual {
                 break;
         }
 
-        return titulo;
+
+
+    opcionElegidaMenu(titulo);
+
     }
 
 
@@ -64,20 +67,34 @@ public class InterfazVisual {
         System.out.println("═════════════════════════════════════════════════");
     }
 
-    public void renderizadoListaAtributos() {
+    public void renderizadoListaAtributos(boolean filtroBusqueda) {
 
-        System.out.println("╔═════════════════════════════════════════════════╗");
-        System.out.println("║                ATRIBUTOS EMPLEADO               ║");
-        System.out.println("╠═════════════════════════════════════════════════╣");
-        System.out.println("║                                                 ║");
-        System.out.println("║  1. Nombre empleado                             ║");
-        System.out.println("║  2. Apellido empleado                           ║");
-        System.out.println("║  3. Cargo empleado                              ║");
-        System.out.println("║  4. Salario empleado                            ║");
-        System.out.println("║  5. Fecha de inicio empleado                    ║");
-        System.out.println("║  6. Salir                                       ║");
-        System.out.println("║                                                 ║");
-        System.out.println("╚═════════════════════════════════════════════════╝");
+        if(filtroBusqueda){
+            System.out.println("╔═════════════════════════════════════════════════╗");
+            System.out.println("║                ATRIBUTOS EMPLEADO               ║");
+            System.out.println("╠═════════════════════════════════════════════════╣");
+            System.out.println("║                                                 ║");
+            System.out.println("║  1. Nombre empleado                             ║");
+            System.out.println("║  2. Apellido empleado                           ║");
+            System.out.println("║  3. Cargo empleado                              ║");
+            System.out.println("║                                                 ║");
+            System.out.println("╚═════════════════════════════════════════════════╝");
+        }
+        else{
+            System.out.println("╔═════════════════════════════════════════════════╗");
+            System.out.println("║                ATRIBUTOS EMPLEADO               ║");
+            System.out.println("╠═════════════════════════════════════════════════╣");
+            System.out.println("║                                                 ║");
+            System.out.println("║  1. Nombre empleado                             ║");
+            System.out.println("║  2. Apellido empleado                           ║");
+            System.out.println("║  3. Cargo empleado                              ║");
+            System.out.println("║  4. Salario empleado                            ║");
+            System.out.println("║  5. Fecha de inicio empleado                    ║");
+            System.out.println("║  6. Salir                                       ║");
+            System.out.println("║                                                 ║");
+            System.out.println("╚═════════════════════════════════════════════════╝");
+        }
+
     }
 
 
@@ -86,7 +103,7 @@ public class InterfazVisual {
 
         StringBuilder sb = new StringBuilder();
         sb.append("╔═════════════════════════════════════════════════════╗\n");
-        sb.append(String.format("║ Nombre: %-20s Apellido: %-20s \n", empleado.getName(), empleado.getApellido()));
+        sb.append(String.format("║ Nombre: %-20s Apellido: %-20s \n", empleado.getNombre(), empleado.getApellido()));
         sb.append(String.format("║ Cargo: %-21s Salario: %-20.2f \n", empleado.getCargo(), empleado.getSalario()));
         sb.append(String.format("║ Fecha de Inicio: %-14s                         \n", empleado.getFechaInicio()));
         sb.append("╚═════════════════════════════════════════════════════╝");

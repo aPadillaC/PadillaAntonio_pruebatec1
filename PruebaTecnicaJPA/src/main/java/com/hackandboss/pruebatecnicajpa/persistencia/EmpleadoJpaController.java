@@ -25,9 +25,9 @@ public class EmpleadoJpaController implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    
+
     public EmpleadoJpaController() {
-      emf = Persistence.createEntityManagerFactory("EmpleadoPU");
+        emf = Persistence.createEntityManagerFactory("EmpleadoPU");
     }
 
     public void create(Empleado empleado) {
@@ -87,7 +87,7 @@ public class EmpleadoJpaController implements Serializable {
             }
         }
     }
-    
+
     // Método de todos los usuarios activos
     public List<Empleado> findEmpleadosActivos() {
         EntityManager em = getEntityManager();
@@ -95,10 +95,10 @@ public class EmpleadoJpaController implements Serializable {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery<Empleado> cq = cb.createQuery(Empleado.class);
             Root<Empleado> empleadoRoot = cq.from(Empleado.class);
-            
+
             // Agregar un filtro para seleccionar solo empleados con el booleano activo en true
             cq.where(cb.isTrue(empleadoRoot.get("activo")));
-            
+
             Query q = em.createQuery(cq);
             return q.getResultList();
         } finally {
@@ -175,5 +175,5 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

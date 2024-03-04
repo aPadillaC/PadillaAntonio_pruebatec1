@@ -4,26 +4,26 @@ package com.hackandboss.pruebatecnicajpa.logica;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ControladorEmpleados {
+public class GestorEmpleados {
 
     InterfazVisual interfazVisual = new InterfazVisual();
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
 
-    public String validacionMenuPrincial(int opcionElegida) {
+    public int validacionMenuPrincial(int opcionElegida) {
 
         boolean opcionOk = false;
-        String opELegidaString = "";
 
         while (!opcionOk){
 
             if( opcionElegida > 0 && opcionElegida < 7){
                 opcionOk = true;
-                opELegidaString = interfazVisual.opcionElegidaString(opcionElegida);
+                interfazVisual.opcionElegidaString(opcionElegida);
             }
             else {
                 System.out.println("ERROR!!!!!!");
@@ -31,11 +31,11 @@ public class ControladorEmpleados {
                 interfazVisual.renderizadoGeneralMenu();
                 System.out.print("Seleccione una opción correcta: ");
                 opcionElegida = scanner.nextInt();
+                scanner.nextLine();
             }
-
         }
 
-        return opELegidaString;
+        return opcionElegida;
     }
 
 
@@ -172,7 +172,7 @@ public class ControladorEmpleados {
 
         while (!idValido){
 
-            System.out.print("Seleccione el número de id del empleado del que desea actualizar datos: ");
+            System.out.print("Seleccione el número de id del empleado: ");
 
             if(scanner.hasNextInt()){
                 id = scanner.nextInt();
@@ -198,7 +198,7 @@ public class ControladorEmpleados {
         interfazVisual.opcionElegidaMenu("Datos actuales");
         String estiloEmpleado = interfazVisual.estiloVisualEmpleado(editarEmpleado);
         System.out.println(estiloEmpleado);
-        interfazVisual.renderizadoListaAtributos();
+        interfazVisual.renderizadoListaAtributos(false);
         System.out.print("Indica el atributo que desea modificar o pulsa 6 para volver al menú principal: ");
         int editarAtributo = scanner.nextInt();
         scanner.nextLine();
@@ -218,7 +218,7 @@ public class ControladorEmpleados {
             case 1:
                 interfazVisual.opcionElegidaMenu("Editar nombre");
                 String nombre = validacionesString("nombre");
-                editarEmpleado.setName(nombre);
+                editarEmpleado.setNombre(nombre);
                 interfazVisual.efectoGiro();
                 break;
 
@@ -261,23 +261,75 @@ public class ControladorEmpleados {
 
 
 
-    public String busquedaPorCargo() {
+    public ArrayList busquedaPersonalizada() {
 
-        boolean cargoOk = false;
-        System.out.print("Indique el cargo por el que desea filtrar: ");
-        String cargoElegido = scanner.nextLine().trim();
+        boolean valorOK = false;
+        String atributo = "";
 
-        while(!cargoOk) {
+        interfazVisual.renderizadoListaAtributos(true);
 
-            if(!cargoElegido.isEmpty()){
-                cargoOk = true;
-            }
-            else {
-                System.out.print("Campo vacío, introduce un valor: ");
-                cargoElegido = scanner.nextLine().trim();
+        System.out.print("Indique el atributo por el que desea filtrar: ");
+        int atributoNum = scanner.nextInt();
+        scanner.nextLine();
+
+        while (!valorOK) {
+
+            if (atributoNum > 0 && atributoNum < 4) {
+
+                switch (atributoNum) {
+                    case 1:
+                        atributo = "nombre";
+                        valorOK = true;
+                        interfazVisual.opcionElegidaMenu("Buscar por nombre");
+                        break;
+
+                    case 2:
+                        atributo = "apellido";
+                        valorOK = true;
+                        interfazVisual.opcionElegidaMenu("Buscar por apellido");
+                        break;
+
+                    case 3:
+                        atributo = "cargo";
+                        valorOK = true;
+                        interfazVisual.opcionElegidaMenu("Buscar por cargo");
+                        break;
+
+                    default:
+                        break;
+                }
+            } else {
+                System.out.print("Valor introducido no válido, debe de ser entre 1 y 3: ");
+                atributoNum = scanner.nextInt();
+                scanner.nextLine();
+
             }
         }
 
-        return cargoElegido;
+
+
+
+        System.out.print("Indique el valor: ");
+        String valorAtributo = scanner.nextLine().trim();
+
+        while(!valorOK) {
+
+            if(!valorAtributo.isEmpty()){
+                valorOK = true;
+
+            }
+            else {
+                System.out.print("Campo vacío, introduce un valor: ");
+                valorAtributo = scanner.nextLine().trim();
+            }
+        }
+
+        ArrayList<String> datosBusqueda = new ArrayList<>();
+
+        datosBusqueda.add(atributo);
+        datosBusqueda.add(valorAtributo);
+
+
+        return datosBusqueda;
     }
 }
