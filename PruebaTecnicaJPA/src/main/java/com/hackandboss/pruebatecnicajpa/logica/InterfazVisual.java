@@ -2,6 +2,7 @@ package com.hackandboss.pruebatecnicajpa.logica;
 
 public class InterfazVisual {
 
+    // Renderización del menú principal de la aplicación
     public void renderizadoGeneralMenu() {
 
         System.out.println("╔═════════════════════════════════════════════════╗");
@@ -19,6 +20,7 @@ public class InterfazVisual {
 
     }
 
+    // Según la opción elegida uso la variable título para guardar un mensaje y mostrarlo por pantalla
     public void opcionElegidaString(int opcionElegida) {
 
         String titulo = "";
@@ -60,6 +62,7 @@ public class InterfazVisual {
     }
 
 
+    // Método para mostrar el mensaje de la opción elegida con un diseño predefinido
     public void opcionElegidaMenu(String opElegidaString) {
 
         System.out.println("\n═════════════════════════════════════════════════");
@@ -67,6 +70,9 @@ public class InterfazVisual {
         System.out.println("═════════════════════════════════════════════════");
     }
 
+
+
+    // Renderizo los todos atributos o parte del empleado según el caso (a través de una variable booleana)
     public void renderizadoListaAtributos(boolean filtroBusqueda) {
 
         if(filtroBusqueda){
@@ -99,12 +105,13 @@ public class InterfazVisual {
 
 
 
+    // Muestro los atributos del empleado con un estilo prediseñado
     public String estiloVisualEmpleado (Empleado empleado) {
 
         StringBuilder sb = new StringBuilder();
         sb.append("╔═════════════════════════════════════════════════════╗\n");
         sb.append(String.format("║ Nombre: %-20s Apellido: %-20s \n", empleado.getNombre(), empleado.getApellido()));
-        sb.append(String.format("║ Cargo: %-21s Salario: %-20.2f \n", empleado.getCargo(), empleado.getSalario()));
+        sb.append(String.format("║ Cargo: %-21s Salario: %-20.2f €\n", empleado.getCargo(), empleado.getSalario()));
         sb.append(String.format("║ Fecha de Inicio: %-14s                         \n", empleado.getFechaInicio()));
         sb.append("╚═════════════════════════════════════════════════════╝");
 
@@ -112,6 +119,8 @@ public class InterfazVisual {
     }
 
 
+
+    // Método para mostrar de una manera gráfica la interacción con la BBDD
     public void efectoGiro () throws InterruptedException {
 
         int iterations = 20; // Número de iteraciones del efecto de giro

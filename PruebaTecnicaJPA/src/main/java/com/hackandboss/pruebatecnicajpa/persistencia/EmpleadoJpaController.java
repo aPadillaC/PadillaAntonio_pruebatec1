@@ -30,6 +30,8 @@ public class EmpleadoJpaController implements Serializable {
         emf = Persistence.createEntityManagerFactory("EmpleadoPU");
     }
 
+
+    // 1. Método para crear un empleado
     public void create(Empleado empleado) {
         EntityManager em = null;
         try {
@@ -44,6 +46,8 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
+
+    // 2. Método para actualizar el valor de un empleado tras su edición
     public void edit(Empleado empleado) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
@@ -67,6 +71,8 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
+
+    // 3. Método para eliminar permanentemente un empleado (no se ha utilizado finalmente)
     public void destroy(int id) throws NonexistentEntityException {
         EntityManager em = null;
         try {
@@ -88,7 +94,8 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
-    // Método de todos los usuarios activos
+
+    // 4. Método de todos los usuarios ACTIVOS
     public List<Empleado> findEmpleadosActivos() {
         EntityManager em = getEntityManager();
         try {
@@ -107,7 +114,7 @@ public class EmpleadoJpaController implements Serializable {
     }
 
 
-    // Método para mostrar los empleados con atributo común
+    // 5. Método para mostrar los empleados con un valor de atributo común y que estén ACTIVOS
     public List<Empleado> findEmpleadosByAttribute(String attribute, String value) {
         EntityManager em = getEntityManager();
         try {
@@ -129,14 +136,18 @@ public class EmpleadoJpaController implements Serializable {
     }
 
 
-
+    // 6. Método para listar todos los empleados (ACTIVOS o NO, no se ha utilizado finalmente)
     public List<Empleado> findEmpleadoEntities() {
         return findEmpleadoEntities(true, -1, -1);
     }
 
+
+
     public List<Empleado> findEmpleadoEntities(int maxResults, int firstResult) {
         return findEmpleadoEntities(false, maxResults, firstResult);
     }
+
+
 
     private List<Empleado> findEmpleadoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
@@ -154,6 +165,8 @@ public class EmpleadoJpaController implements Serializable {
         }
     }
 
+
+    // 7. Método para mostrar un empleado a través de su id
     public Empleado findEmpleado(int id) {
         EntityManager em = getEntityManager();
         try {
@@ -162,6 +175,8 @@ public class EmpleadoJpaController implements Serializable {
             em.close();
         }
     }
+
+
 
     public int getEmpleadoCount() {
         EntityManager em = getEntityManager();
