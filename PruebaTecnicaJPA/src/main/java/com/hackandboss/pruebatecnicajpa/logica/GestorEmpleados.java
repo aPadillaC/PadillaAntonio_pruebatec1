@@ -279,7 +279,7 @@ public class GestorEmpleados {
 
         interfazVisual.renderizadoListaAtributos(true); // renderizo los atributos indicándole mediante "false" que me muestre el diseño correspondiente al apartado busqueda
 
-        System.out.print("Indique el atributo por el que desea filtrar: ");
+        System.out.print("Indique el atributo por el que desea filtrar (pulsa del 1 al 3): ");
         int atributoNum = scanner.nextInt();
         scanner.nextLine();
 

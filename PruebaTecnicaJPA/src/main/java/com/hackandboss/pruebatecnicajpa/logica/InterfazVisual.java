@@ -111,7 +111,7 @@ public class InterfazVisual {
         StringBuilder sb = new StringBuilder();
         sb.append("╔═════════════════════════════════════════════════════╗\n");
         sb.append(String.format("║ Nombre: %-20s Apellido: %-20s \n", empleado.getNombre(), empleado.getApellido()));
-        sb.append(String.format("║ Cargo: %-21s Salario: %-20.2f €\n", empleado.getCargo(), empleado.getSalario()));
+        sb.append(String.format("║ Cargo: %-21s Salario: %-10.2f€ \n", empleado.getCargo(), empleado.getSalario()));
         sb.append(String.format("║ Fecha de Inicio: %-14s                         \n", empleado.getFechaInicio()));
         sb.append("╚═════════════════════════════════════════════════════╝");
 

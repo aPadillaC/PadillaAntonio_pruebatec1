@@ -28,8 +28,7 @@ public class PruebaTecnicaJPA {
         boolean usoAplicacion = true;
 
         System.out.println();
-        System.out.println("      BIENVENIDO A LA APLICACION DE GESTION        ");
-        System.out.println("                  DE EMPLEADOS                     ");
+        System.out.println("        ¡¡¡Bienvenidos a EmpleadosAdmin!!!                 ");
 
         // Llamo al método que me muestra el menú
         interfazVisual.renderizadoGeneralMenu();
