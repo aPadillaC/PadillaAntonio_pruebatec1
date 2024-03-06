@@ -3,6 +3,8 @@ package com.hackandboss.pruebatecnicajpa.persistencia;
 
 import com.hackandboss.pruebatecnicajpa.logica.Empleado;
 import com.hackandboss.pruebatecnicajpa.persistencia.exceptions.NonexistentEntityException;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -66,8 +68,8 @@ public class ControladoraPersistencia {
 
 
     // 7. Muestra la lista de empleados por búsqueda personalizada
-    public List<Empleado> busquedaPorAtributo(String atributo, String valor) {
+    public List<Empleado> busquedaPorAtributo(ArrayList atributoValor) {
 
-        return empleadoJPA.findEmpleadosByAttribute(atributo, valor);
+        return empleadoJPA.findEmpleadosByAttribute(atributoValor);
     }
 }

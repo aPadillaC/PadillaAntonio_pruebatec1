@@ -3,6 +3,7 @@ package com.hackandboss.pruebatecnicajpa.logica;
 
 import com.hackandboss.pruebatecnicajpa.persistencia.ControladoraPersistencia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controladora {
@@ -54,9 +55,9 @@ public class Controladora {
 
 
     // 7. Muestra la lista de empleados por búsqueda personalizada
-    public List<Empleado> busquedaPorAtributo(String atributo, String valor) {
+    public List<Empleado> busquedaPorAtributo(ArrayList atributoValor) {
 
 
-        return controlPersistencia.busquedaPorAtributo(atributo, valor);
+        return controlPersistencia.busquedaPorAtributo(atributoValor);
     }
 }

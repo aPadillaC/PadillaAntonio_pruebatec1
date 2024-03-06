@@ -80,7 +80,7 @@ public class PruebaTecnicaJPA {
 
                 case 5: //filtro personalizado para buscar empleados por: nombre, apellido, cargo
                     ArrayList atributoValor = gestorEmpleados.busquedaPersonalizada();
-                    List<Empleado> listaEmpleadosCargo = controladora.busquedaPorAtributo((String) atributoValor.get(0), (String) atributoValor.get(1));
+                    List<Empleado> listaEmpleadosCargo = controladora.busquedaPorAtributo(atributoValor);
                     gestorEmpleados.mostrarListaEmpleadosActivos(listaEmpleadosCargo);
                     interfazVisual.renderizadoGeneralMenu();
                     break;

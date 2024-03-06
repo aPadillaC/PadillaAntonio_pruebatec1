@@ -4,6 +4,7 @@ package com.hackandboss.pruebatecnicajpa.persistencia;
 import com.hackandboss.pruebatecnicajpa.logica.Empleado;
 import com.hackandboss.pruebatecnicajpa.persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -115,7 +116,11 @@ public class EmpleadoJpaController implements Serializable {
 
 
     // 5. Método para mostrar los empleados con un valor de atributo común y que estén ACTIVOS
-    public List<Empleado> findEmpleadosByAttribute(String attribute, String value) {
+    public List<Empleado> findEmpleadosByAttribute(ArrayList atributoValor) {
+
+        String attribute = (String) atributoValor.get(0);
+        String value = (String) atributoValor.get(1);
+
         EntityManager em = getEntityManager();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
