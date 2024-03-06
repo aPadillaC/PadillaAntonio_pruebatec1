@@ -68,6 +68,9 @@
 	<li>1) Para el borrado lógico y edición de un usuario, se ha partido del supuesto de que el usuario conoce previamente los id de todos los empleados</li>
 	<li>2) Para la búsqueda personalizada, se ha partido del supuesto de que el usuario conoce los valores de los atributos guardados.</li>
 	<li>3) Para la validación de datos en los atributos String, se ha partido del supuesto de que el usuario no introducirá caracteres que no sean letras, es decir, números o caracteres especiales.</li>
+    <li>4) Para la validación de datos númericos, se ha partido del supuesto que el usuario no introducirá valores que no sean numéricos.</li>
+    <li>5) Para la introducción de datos tipo fecha, se ha partido del supuesto que sólo se permitirá introducir los datos en un formato predeterminado el cuál se le indicará al usuario cada vez que interactúe con este tipo de dato.</li>
+    <li>6) Para la introducción de datos en general, se ha partido del supuesto de que no será permitido ingresar campos vacíos, el código tiene la correspondiente lógica implementada para controlar este punto.</li>
 </ul>
 
 <!-- DESARROLLADORES -->
