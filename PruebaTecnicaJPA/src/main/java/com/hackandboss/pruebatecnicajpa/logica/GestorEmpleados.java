@@ -130,7 +130,7 @@ public class GestorEmpleados {
 
 
     // 5. Método para juntar todos los datos introducidos tras sus validaciones y creación de la instancia tipo Empleado
-    public Empleado validacionesRegistro() throws InterruptedException {
+    public Empleado validacionesRegistro() {
 
         Empleado empleado;
 
@@ -203,7 +203,7 @@ public class GestorEmpleados {
 
 
     // 8. Método para editar el empleado
-    public Empleado editarEmpleado(Empleado editarEmpleado) throws InterruptedException {
+    public Empleado editarEmpleado(Empleado editarEmpleado) {
 
         boolean atributoOk = false;
         interfazVisual.opcionElegidaMenu("Datos actuales"); // a) Muestro los datos actuales

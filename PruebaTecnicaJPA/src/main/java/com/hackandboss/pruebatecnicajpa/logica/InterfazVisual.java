@@ -121,7 +121,7 @@ public class InterfazVisual {
 
 
     // Método para mostrar de una manera gráfica la interacción con la BBDD
-    public void efectoGiro () throws InterruptedException {
+    public void efectoGiro () {
 
         int iterations = 20; // Número de iteraciones del efecto de giro
         int delay = 100; // Retraso en milisegundos entre iteraciones
@@ -131,7 +131,12 @@ public class InterfazVisual {
 
         for (int i = 0; i < iterations; i++) {
             System.out.print("\r" + characters[i % characters.length] + " Operación en proceso... ");
-            Thread.sleep(delay);
+
+            try {
+                Thread.sleep(delay);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
         }
 
         System.out.println("\rOperación completada!\n");

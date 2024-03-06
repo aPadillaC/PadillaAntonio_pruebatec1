@@ -5,19 +5,20 @@
 
 <h2 dir="auto">Tecnologías utilizadas</h2>
 <ul dir="auto">
-	<li>Back-end: <a target="_blank" rel="noopener noreferrer nofollow" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU" alt="Java" data-canonical-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU" style="max-width: 10%;"></a>
-	<li>Base de datos: <a target="_blank" rel="noopener noreferrer nofollow" href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnO0xHQrNDbCdgefmnjSjUPAMIKBx2F-NOww&usqp=CAU" alt="MySQL" data-canonical-src="" style="max-width: 8%;"></a></li>
+	<li>Back-end: <a target="_blank" rel="noopener noreferrer nofollow" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU" alt="Java" data-canonical-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHiXC1J0Tu16Edwsnf83qnm-O3DfPLxYmJw&usqp=CAU" style="max-width: 7%;"></a>
+	<li>Base de datos: <a target="_blank" rel="noopener noreferrer nofollow" href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnO0xHQrNDbCdgefmnjSjUPAMIKBx2F-NOww&usqp=CAU" alt="MySQL" data-canonical-src="" style="max-width: 5%;"></a></li>
 </ul>
 
 <!-- Información General -->
 
 <h2 dir="auto">Información General</h2>
 <ul dir="auto">
-	<li><b>Agregar un nuevo empleado:</b> Permite a los usuarios ingresar información sobre un nuevo empleado, incluyendo nombre, apellido, cargo, salario y fecha de inicio.</li>
+	<li><b>Agregar un nuevo empleado:</b> Permite a los usuarios ingresar información sobre un nuevo empleado, incluyendo nombre, apellido, cargo, salario y fecha de inicio. Se validarán los datos de entrada para que no se pueda registrar usuarios con campos vacíos.</li>
 	<li><b>Listar empleados:</b> Visualización de la lista de todos los empleados activos en la base de datos.</li>
-	<li><b>Actualizar empleados:</b> Los usuarios pueden modificar la información de un empleado existente, incluyendo nombre, apellido, cargo, salario o fecha de inicio.</li>
+	<li><b>Actualizar empleados:</b> Los usuarios pueden modificar la información de un empleado existente, incluyendo nombre, apellido, cargo, salario o fecha de inicio.  mediante su id. Se validará los datos de entrada para no poder actualizar un empleado con un campo vacío.</li>
 	<li><b>Eliminar un empleado:</b> Borrado lógico de un usuario mediante la modificación de un atributo de su clase.</li>
 	<li><b>Buscar empleados por cargo:</b> Búsqueda personalizada de los empleados activos mediante coincidencia en nombre, apellido o cargo.</li>
+    <li><b>Salir:</b> La ejecución del programa finalizará</li>
 </ul>
 
 <!-- Instalación y configuración -->

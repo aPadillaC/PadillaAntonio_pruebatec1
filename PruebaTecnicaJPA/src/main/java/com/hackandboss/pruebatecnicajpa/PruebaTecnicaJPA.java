@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class PruebaTecnicaJPA {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
 
         // Hago la instancia a las clases que voy a necesitar
         Controladora controladora = new Controladora(); // controladora del paquete de lógica
@@ -27,8 +27,7 @@ public class PruebaTecnicaJPA {
         // Declaro esta variable que será la que me permita correr mi aplicación indefinidamente.
         boolean usoAplicacion = true;
 
-        System.out.println();
-        System.out.println("        ¡¡¡Bienvenidos a EmpleadosAdmin!!!                 ");
+        System.out.println("\n        ¡¡¡Bienvenidos a EmpleadosAdmin!!!                 ");
 
         // Llamo al método que me muestra el menú
         interfazVisual.renderizadoGeneralMenu();
@@ -97,11 +96,10 @@ public class PruebaTecnicaJPA {
                 System.out.print("Seleccione una opción del 1 al 6: ");
                 opcionElegida = scanner.nextInt();
                 scanner.nextLine();
+
+                // Vuelvo a validar la opción elegida
+                opcionElegida = gestorEmpleados.validacionMenuPrincial(opcionElegida);
             }
-
-
-            // Vuelvo a validar la opción elegida
-            opcionElegida = gestorEmpleados.validacionMenuPrincial(opcionElegida);
         }
 
     }
