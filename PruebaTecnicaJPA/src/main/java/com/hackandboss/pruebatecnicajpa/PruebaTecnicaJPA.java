@@ -35,7 +35,6 @@ public class PruebaTecnicaJPA {
         System.out.print("Seleccione una opción del 1 al 6: ");
         int opcionElegida = scanner.nextInt(); // Variable con valor al número introducido por el usuario según el menú
 
-
         // Verifico que la opción introducida es válida
         opcionElegida = gestorEmpleados.validacionMenuPrincial(opcionElegida);
 

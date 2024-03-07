@@ -49,9 +49,11 @@
 
 <h2 dir="auto">Abrir y Ejecutar Proyecto</h2>
 <ul dir="auto">
+    <li>Clona el repositorio</li>
   	<li>Abrir proyecto en su IDE</li>
 	<li>Actualiza dependencias si fuera necesario</li>
-	<li>Ejecuta el programa y sigue las instrucciones proporcionadas en la consola.
+	<li>Ejecuta el programa mediante el archivo `PruebaTecnicaJPA.java`
+    <li>Sigue las instrucciones proporcionadas en la consola.</li>
 </ul>
 
 <!-- BBDD -->
